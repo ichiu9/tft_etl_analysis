@@ -1,5 +1,8 @@
-import requests
 import psycopg2
+import requests
+
+
+
 from modules.psycop_modules.createConnection import *
 
 def drop_tables(cursor, connection):

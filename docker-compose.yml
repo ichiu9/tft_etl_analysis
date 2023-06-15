@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  tft:
+    image: tft
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    network_mode: host

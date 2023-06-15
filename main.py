@@ -3,7 +3,7 @@
 
 # # Pulling data from Riot APIs
 
-from IPython import get_ipython
+#from IPython import get_ipython
 from configs.pgdbconfig import *
 from configs.riotconfig import *
 from modules.psycop_modules.createConnection import *
@@ -12,13 +12,12 @@ from modules.sql_modules.pgCreate import *
 from modules.sql_modules.pgDrop import *
 from modules.sql_modules.pgInsert import *
 
-#get_ipython().system('pip install requests')
-#get_ipython().system('pip install pandas')
-
-import requests
+from collections.abc import Mapping
 import json
 import psycopg2
 import datetime
+import requests
+
 
 # ## Get Summoner Info
 
@@ -41,7 +40,7 @@ with open('results.json', 'w') as fp:
 
 # ### Execute SQL Queries
 
-conn, cur = create_connection(pgdb, pguser, pgpassword)
+conn, cur = create_connection(pghost, pgdb, pguser, pgpassword)
 
 # Drop and Create Tables
 drop_tables(cur, conn)
